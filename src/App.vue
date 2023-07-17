@@ -25,7 +25,6 @@ import Footer from './components/Footer.vue'
     <!--begin home_wrapper -->
     <Home/>
     <!--end home_wrapper -->
-    
     <!--begin services -->
     <Service/>
     <!-- end section_wrapper -->

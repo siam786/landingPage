@@ -1,73 +1,51 @@
 <template>
   <section id="services">
-      <!--begin services_item -->
-      <div class="services_item">
-        <!--begin services_box -->
-        <div class="services_box">
-          <div class="icon_wrapper">
-            <Icon icon="ri:computer-line" width="50" />
-          </div>
-          <h2>Super Design Layout</h2>
-          <p>
-            Parumitsum clarits, it ets solemne fiant futurum magna et netsum
-            adipisci elit , hendris itsum mis salit ets lorem ipsum sed interdut
-            wisi net quis.
-          </p>
-          <a href="" class="services_button">Read More</a>
+    <div v-for="service in services" :key="service.id" class="services_item">
+      <div class="services_box">
+        <div class="icon_wrapper">
+          <Icon :icon="service.icon" width="50" />
         </div>
-        <!--end services_box -->
+        <h2>{{ service.title }}</h2>
+        <p>{{ service.description }}</p>
+        <a href="" class="services_button">Read More</a>
       </div>
-      <!--end services_item -->
-
-      <!--begin services_item -->
-      <div class="services_item">
-        <!--begin services_box -->
-        <div class="services_box">
-          <div class="">
-            <Icon icon="ph:pen-thin" width="50" />
-            </div>
-          <div class="icon_wrapper">
-            <div class="">
-            </div>
-            
-          </div>
-          <h2>Responsive & Mobile Ready</h2>
-          <p>
-            Parumitsum clarits, it ets solemne fiant futurum magna et netsum
-            adipisci elit , hendris itsum mis salit ets lorem ipsum sed interdut
-            wisi net quis.
-          </p>
-          <a href="" class="services_button">Read More</a>
-        </div>
-        <!--end services_box -->
-      </div>
-      <!--end services_item -->
-
-      <!--begin services_item -->
-      <div class="services_item">
-        <!--begin services_box -->
-        <div class="services_box">
-          <div class="icon_wrapper">
-            <Icon icon="clarity:picture-line" width="50" />
-          </div>
-          <h2>Clean & Commented Code</h2>
-          <p>
-            Parumitsum clarits, it ets solemne fiant futurum magna et netsum
-            adipisci elit , hendris itsum mis salit ets lorem ipsum sed interdut
-            wisi net quis.
-          </p>
-          <a href="" class="services_button">Read More</a>
-        </div>
-        <!--end services_box -->
-      </div>
-      <!--end services_item -->
-    </section>
+    </div>
+  </section>
 </template>
 
-<script setup>
-import { Icon } from '@iconify/vue';
+<script>
+import { ref } from 'vue';
+import { Icon } from '@iconify/vue'; // Import your custom Icon component
+
+export default {
+  components: {
+    Icon // Register the Icon component
+  },
+  setup() {
+    const services = ref([
+      {
+        id: 1,
+        icon: "ri:computer-line",
+        title: "Super Design Layout",
+        description: "Parumitsum clarits, it ets solemne fiant futurum magna et netsum adipisci elit, hendris itsum mis salit ets lorem ipsum sed interdut wisi net quis."
+      },
+      {
+        id: 2,
+        icon: "ph:pen-thin",
+        title: "Responsive & Mobile Ready",
+        description: "Parumitsum clarits, it ets solemne fiant futurum magna et netsum adipisci elit, hendris itsum mis salit ets lorem ipsum sed interdut wisi net quis."
+      },
+      {
+        id: 3,
+        icon: "clarity:picture-line",
+        title: "Clean & Commented Code",
+        description: "Parumitsum clarits, it ets solemne fiant futurum magna et netsum adipisci elit, hendris itsum mis salit ets lorem ipsum sed interdut wisi net quis."
+      }
+    ]);
+
+    return {
+      services
+    };
+  }
+};
 </script>
-
-<style>
-
-</style>

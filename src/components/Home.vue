@@ -3,16 +3,16 @@
       <!--begin home_box -->
       <div class="home_box">
         <h2 class="home_title">
-          innovative &amp; modern template, designed with love for apps.
+          {{ homeTitle }}
         </h2>
 
         <h3 class="home_subtitle">
-          Design is not just what it looks like. Design is how it works.
+          {{ homeSubTitle }}
         </h3>
 
         <!--begin success_box -->
         <p class="newsletter_success_box" style="display: none">
-          We received your message and you'll hear from us soon. Thank You!
+          {{ SuccessBox }}
         </p>
         <!--end success_box -->
 
@@ -55,10 +55,10 @@
     </section>
 </template>
 
-<script>
-export default {
-
-}
+<script setup>
+const homeTitle='innovative modern template, designed with love for apps.'
+const homeSubTitle='Design is not just what it looks like. Design is how it works..'
+const SuccessBox='We received your message and you ll hear from us soon. Thank You!'
 </script>
 
 <style>
