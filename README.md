@@ -10,5 +10,5 @@ This simple vue3 Simple landing convert from html,css template
 
 ## Screenshots
 
-![App Screenshot](https://i.ibb.co/zrd6DYd/screencapture-localhost-5173-2023-07-17-13-05-59.png)
+![App Screenshot](https://i.ibb.co/NSwMsgW/Screenshot-2.png)
 
