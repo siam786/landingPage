@@ -13,16 +13,10 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue';
 import { Icon } from '@iconify/vue'; // Import your custom Icon component
-
-export default {
-  components: {
-    Icon // Register the Icon component
-  },
-  setup() {
-    const services = ref([
+const services = ref([
       {
         id: 1,
         icon: "ri:computer-line",
@@ -40,12 +34,8 @@ export default {
         icon: "clarity:picture-line",
         title: "Clean & Commented Code",
         description: "Parumitsum clarits, it ets solemne fiant futurum magna et netsum adipisci elit, hendris itsum mis salit ets lorem ipsum sed interdut wisi net quis."
-      }
-    ]);
 
-    return {
-      services
-    };
-  }
-};
+      }]);
+
+
 </script>

@@ -1,365 +1,192 @@
 <template>
   <section id="blog">
-      <!--begin call_to_action_grey_wrapper -->
-      <div class="call_to_action_grey_wrapper">
-        <!--begin call_to_action_white -->
-        <div class="call_to_action_grey">
-          <h3 class="left_fade">News &amp; Announcements</h3>
-          <div class="separator_wrapper bounce_fade">
-            <div class="separator_first_circle">
-              <div class="separator_second_circle"></div>
-            </div>
+    <!--begin call_to_action_grey_wrapper -->
+    <div class="call_to_action_grey_wrapper">
+      <!--begin call_to_action_white -->
+      <div class="call_to_action_grey">
+        <h3 class="left_fade">{{ newsTitle }}</h3>
+        <div class="separator_wrapper bounce_fade">
+          <div class="separator_first_circle">
+            <div class="separator_second_circle"></div>
           </div>
-          <h4 class="right_fade">
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration, by injected humour, or new
-            randomised words which don't look believable.
-          </h4>
         </div>
-        <!--end call_to_action_white -->
+        <h4 class="right_fade">
+          {{ newsSubTitle }}
+        </h4>
       </div>
-      <!--end call_to_action_grey_wrapper -->
+      <!--end call_to_action_white -->
+    </div>
+    <!--end call_to_action_grey_wrapper -->
 
-      <!--begin section_wrapper -->
-      <div class="section_wrapper grey_bg">
-        <!--begin section_box -->
-        <div class="section_box small_margins">
-          <!--begin row -->
-          <div class="row up_fade">
-            <!--begin fourcol -->
-            <div class="fourcol">
-              <!--begin blog_item -->
-              <div class="blog_item">
-                <!--begin zoom_photo -->
-                <div class="zoom_photo">
-                  <div class="view view-first">
-                    <a
-                      href="lib/images/blog1.jpg"
-                      class="prettyPhoto[gallery1]"
-                    >
-                      <img :src="blog1" alt="pic" />
-                      <span class="mask">
-                        <span class="zoom"></span>
-                      </span>
-                    </a>
-                  </div>
+    <!--begin section_wrapper -->
+    <div class="section_wrapper grey_bg">
+      <!--begin section_box -->
+      <div class="section_box small_margins">
+        <div v-for="item in blogItems" :key="item.id" class="row up_fade">
+          <div v-for="blog in item.blogs" :key="blog.id" class="fourcol">
+            <div class="blog_item">
+              <div class="zoom_photo">
+                <div class="view view-first">
+                  <a :href="blog.imageUrl" class="prettyPhoto[gallery1]">
+                    <img :src="blog.imageUrl" :alt="blog.title" />
+                    <span class="mask">
+                      <span class="zoom"></span>
+                    </span>
+                  </a>
                 </div>
-                <!--end zoom_photo -->
-
-                <!--begin blog_item_inner -->
-                <div class="blog_item_inner">
-                  <h3 class="blog_title">
-                    <a href="#">Lorem ipsum sit netsum amet.</a>
-                  </h3>
-
-                  <a href="#" class="blog_icons"
-                    ><Icon icon="material-symbols:man" width="20" /> By John Doe</a
-                  >
-
-                  <a href="#" class="blog_icons last"
-                    ><Icon icon="icon-park-outline:stapler" width="20" /> Marketing, Design</a
-                  >
-
-                  <p>
-                    Quis autem velis reprehenderit etims quiste voluptate velit
-                    esse quam nihil ets illum sedit consequatur quia voluptas
-                    sit aspernatura.
-                  </p>
-
-                  <a href="#" class="button_grey">Read More</a>
-
-                  <a href="#" class="blog_comments_icon"
-                    ><Icon icon="bi:chat" width="15" /> 8</a
-                  >
-                </div>
-                <!--end blog_item_inner -->
               </div>
-              <!--end blog_item -->
-            </div>
-            <!--end fourcol -->
-
-            <!--begin fourcol -->
-            <div class="fourcol">
-              <!--begin blog_item -->
-              <div class="blog_item">
-                <!--begin zoom_photo -->
-                <div class="zoom_photo">
-                  <div class="view view-first">
-                    <a
-                      href="lib/images/blog2.jpg"
-                      class="prettyPhoto[gallery1]"
-                    >
-                      <img :src="blog2" alt="pic" />
-                      <span class="mask">
-                        <span class="zoom"></span>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-                <!--end zoom_photo -->
-
-                <!--begin blog_item_inner -->
-                <div class="blog_item_inner">
-                  <h3 class="blog_title">
-                    <a href="#">Lorem ipsum sit netsum amet.</a>
-                  </h3>
-
-                  <a href="#" class="blog_icons"
-                    ><Icon icon="material-symbols:man" width="20" /> By John Doe</a
-                  >
-
-                  <a href="#" class="blog_icons last"
-                    ><Icon icon="icon-park-outline:stapler" width="20" /> Marketing, Design</a
-                  >
-
-                  <p>
-                    Quis autem velis reprehenderit etims quiste voluptate velit
-                    esse quam nihil ets illum sedit consequatur quia voluptas
-                    sit aspernatura.
-                  </p>
-
-                  <a href="#" class="button_grey">Read More</a>
-
-                  <a href="#" class="blog_comments_icon"
-                    ><Icon icon="bi:chat" width="15" /> 4</a
-                  >
-                </div>
-                <!--end blog_item_inner -->
+              <div class="blog_item_inner">
+                <h3 class="blog_title">
+                  <a :href="blog.link">{{ blog.title }}</a>
+                </h3>
+                <a href="#" class="blog_icons">
+                  <Icon :icon="blog.authorIcon" width="20" /> {{ blog.author }}
+                </a>
+                <a href="#" class="blog_icons last">
+                  <Icon :icon="blog.categoryIcon" width="20" />
+                  {{ blog.category }}
+                </a>
+                <p>{{ blog.description }}</p>
+                <a href="#" class="button_grey">Read More</a>
+                <a href="#" class="blog_comments_icon">
+                  <Icon icon="bi:chat" width="15" /> {{ blog.comments }}</a
+                >
               </div>
-              <!--end blog_item -->
             </div>
-            <!--end fourcol -->
-
-            <!--begin fourcol -->
-            <div class="fourcol last">
-              <!--begin blog_item -->
-              <div class="blog_item">
-                <!--begin zoom_photo -->
-                <div class="zoom_photo">
-                  <div class="view view-first">
-                    <a
-                      href="lib/images/blog3.jpg"
-                      class="prettyPhoto[gallery1]"
-                    >
-                      <img :src="blog3" alt="pic" />
-                      <span class="mask">
-                        <span class="zoom"></span>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-                <!--end zoom_photo -->
-
-                <!--begin blog_item_inner -->
-                <div class="blog_item_inner">
-                  <h3 class="blog_title">
-                    <a href="#">Lorem ipsum sit netsum amet.</a>
-                  </h3>
-
-                  <a href="#" class="blog_icons"
-                    ><Icon icon="material-symbols:man" width="20" /> By John Doe</a
-                  >
-
-                  <a href="#" class="blog_icons last"
-                    ><Icon icon="icon-park-outline:stapler" width="20" /> Marketing, Design</a
-                  >
-
-                  <p>
-                    Quis autem velis reprehenderit etims quiste voluptate velit
-                    esse quam nihil ets illum sedit consequatur quia voluptas
-                    sit aspernatura.
-                  </p>
-
-                  <a href="#" class="button_grey">Read More</a>
-
-                  <a href="#" class="blog_comments_icon"
-                    ><Icon icon="bi:chat" width="15" /> 5</a
-                  >
-                </div>
-                <!--end blog_item_inner -->
-              </div>
-              <!--end blog_item -->
-            </div>
-            <!--end fourcol -->
           </div>
-          <!--end row -->
-
-          <!--begin row -->
-          <div class="row up_fade">
-            <!--begin fourcol -->
-            <div class="fourcol">
-              <!--begin blog_item -->
-              <div class="blog_item">
-                <!--begin zoom_photo -->
-                <div class="zoom_photo">
-                  <div class="view view-first">
-                    <a
-                      href="lib/images/blog4.jpg"
-                      class="prettyPhoto[gallery1]"
-                    >
-                      <img :src="blog4" alt="pic" />
-                      <span class="mask">
-                        <span class="zoom"></span>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-                <!--end zoom_photo -->
-
-                <!--begin blog_item_inner -->
-                <div class="blog_item_inner">
-                  <h3 class="blog_title">
-                    <a href="#">Lorem ipsum sit netsum amet.</a>
-                  </h3>
-
-                  <a href="#" class="blog_icons"
-                    ><Icon icon="material-symbols:man" width="20" /> By John Doe</a
-                  >
-
-                  <a href="#" class="blog_icons last"
-                    ><Icon icon="icon-park-outline:stapler" width="20" /> Marketing, Design</a
-                  >
-
-                  <p>
-                    Quis autem velis reprehenderit etims quiste voluptate velit
-                    esse quam nihil ets illum sedit consequatur quia voluptas
-                    sit aspernatura.
-                  </p>
-
-                  <a href="#" class="button_grey">Read More</a>
-
-                  <a href="#" class="blog_comments_icon"
-                    ><Icon icon="bi:chat" width="15" /> 8</a
-                  >
-                </div>
-                <!--end blog_item_inner -->
-              </div>
-              <!--end blog_item -->
-            </div>
-            <!--end fourcol -->
-
-            <!--begin fourcol -->
-            <div class="fourcol">
-              <!--begin blog_item -->
-              <div class="blog_item">
-                <!--begin zoom_photo -->
-                <div class="zoom_photo">
-                  <div class="view view-first">
-                    <a
-                      href="lib/images/blog5.jpg"
-                      class="prettyPhoto[gallery1]"
-                    >
-                      <img :src="blog5" alt="pic" />
-                      <span class="mask">
-                        <span class="zoom"></span>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-                <!--end zoom_photo -->
-
-                <!--begin blog_item_inner -->
-                <div class="blog_item_inner">
-                  <h3 class="blog_title">
-                    <a href="#">Lorem ipsum sit netsum amet.</a>
-                  </h3>
-
-                  <a href="#" class="blog_icons"
-                    ><Icon icon="material-symbols:man" width="20" /> By John Doe</a
-                  >
-
-                  <a href="#" class="blog_icons last"
-                    ><Icon icon="icon-park-outline:stapler" width="20" /> Marketing, Design</a
-                  >
-
-                  <p>
-                    Quis autem velis reprehenderit etims quiste voluptate velit
-                    esse quam nihil ets illum sedit consequatur quia voluptas
-                    sit aspernatura.
-                  </p>
-
-                  <a href="#" class="button_grey">Read More</a>
-
-                  <a href="#" class="blog_comments_icon"
-                    ><Icon icon="bi:chat" width="15" /> 4</a
-                  >
-                </div>
-                <!--end blog_item_inner -->
-              </div>
-              <!--end blog_item -->
-            </div>
-            <!--end fourcol -->
-
-            <!--begin fourcol -->
-            <div class="fourcol last">
-              <!--begin blog_item -->
-              <div class="blog_item">
-                <!--begin zoom_photo -->
-                <div class="zoom_photo">
-                  <div class="view view-first">
-                    <a
-                      href="lib/images/blog6.jpg"
-                      class="prettyPhoto[gallery1]"
-                    >
-                      <img :src="blog6" alt="pic" />
-                      <span class="mask">
-                        <span class="zoom"></span>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-                <!--end zoom_photo -->
-
-                <!--begin blog_item_inner -->
-                <div class="blog_item_inner">
-                  <h3 class="blog_title">
-                    <a href="#">Lorem ipsum sit netsum amet.</a>
-                  </h3>
-
-                  <a href="#" class="blog_icons"
-                    ><Icon icon="material-symbols:man" width="20" /> By John Doe</a
-                  >
-
-                  <a href="#" class="blog_icons last"
-                    ><Icon icon="icon-park-outline:stapler" width="20" /> Marketing, Design</a
-                  >
-
-                  <p>
-                    Quis autem velis reprehenderit etims quiste voluptate velit
-                    esse quam nihil ets illum sedit consequatur quia voluptas
-                    sit aspernatura.
-                  </p>
-
-                  <a href="#" class="button_grey">Read More</a>
-
-                  <a href="#" class="blog_comments_icon"
-                    ><Icon icon="bi:chat" width="15" /> 5</a
-                  >
-                </div>
-                <!--end blog_item_inner -->
-              </div>
-              <!--end blog_item -->
-            </div>
-            <!--end fourcol -->
-          </div>
-          <!--end row -->
         </div>
-        <!--end section_box -->
       </div>
-      <!--end section_wrapper -->
-    </section>
+      <!--end section_box -->
+    </div>
+    <!--end section_wrapper -->
+  </section>
 </template>
 
 <script setup>
-import { Icon } from '@iconify/vue';
-import blog1 from "../../public/img/blog1.jpg";
-import blog2 from "../../public/img/blog2.jpg";
-import blog3 from "../../public/img/blog3.jpg";
-import blog4 from "../../public/img/blog4.jpg";
-import blog5 from "../../public/img/blog5.jpg";
-import blog6 from "../../public/img/blog6.jpg";
+import { Icon } from "@iconify/vue";
+
+const blogItems = [
+  {
+    id: 1,
+    blogs: [
+      {
+        id: 1,
+        imageUrl: "../../public/img/blog1.jpg",
+        title: "Lorem ipsum sit netsum amet.",
+        authorIcon: "material-symbols:man",
+        author: "John Doe",
+        categoryIcon: "icon-park-outline:stapler",
+        category: "Marketing, Design",
+        description:
+        "Prepare to be captivated by the ethereal symphony of emotions in Quis Autem Velis. This introspective exploration of voluptas and nihil will challenge your perceptions, leaving you with a renewed understanding of the human experience.",
+        comments: 8,
+      },
+    ],
+  },
+  {
+    id: 2,
+    blogs: [
+      {
+        id: 2,
+        imageUrl: "../../public/img/blog2.jpg",
+        title: "Unveiling the Secrets of Lorem Ipsum",
+        authorIcon: "material-symbols:man",
+        author: "John Doe",
+        categoryIcon: "icon-park-outline:stapler",
+        category: "Marketing, Design",
+        description:
+        "Quaestis Voluptate is a mesmerizing odyssey that explores the transformative power of self-reflection. Delve into the enigma of sedit and aspernatura, and discover the profound beauty that lies within the depths of your being.",
+        comments: 4,
+      },
+    ],
+  },
+  {
+    id: 3,
+    blogs: [
+      {
+        id: 3,
+        imageUrl: "../../public/img/blog3.jpg",
+        title: "Exploring the Depths of Netsum Amet",
+        authorIcon: "material-symbols:man",
+        author: "John Doe",
+        categoryIcon: "icon-park-outline:stapler",
+        category: "Marketing, Design",
+        description:
+        "Immerse yourself in the enigmatic world of Quis Autem Velis and witness the poetic dance between illum and consequatur. This introspective journey will unravel the mysteries of reprehenderit, leaving you in awe of the boundless potential within.",
+        comments: 5,
+      },
+    ],
+  },
+  {
+    id: 4,
+    blogs: [
+      {
+        id: 4,
+        imageUrl: "../../public/img/blog4.jpg",
+        title: "The Journey of Lorem Ipsum: From Words to Meaning",
+        authorIcon: "material-symbols:man",
+        author: "John Doe",
+        categoryIcon: "icon-park-outline:stapler",
+        category: "Marketing, Design",
+        description:
+        "Step into the realm of illuminated consciousness and embark on a profound quest to understand the interplay between nihil and sedit. Quis Autem Velis is a riveting tale that will challenge your perceptions and ignite your soul.",
+        comments: 8,
+      },
+    ],
+  },
+  {
+    id: 5,
+    blogs: [
+      {
+        id: 5,
+        imageUrl: "../../public/img/blog5.jpg",
+        title: "Unlocking the Power of Sit Netsum Amet",
+        authorIcon: "material-symbols:man",
+        author: "John Doe",
+        categoryIcon: "icon-park-outline:stapler",
+        category: "Marketing, Design",
+        description:
+        "Unlock the secrets of etims and quiste in this thought-provoking exploration of personal growth and fulfillment. Discover the true essence of voluptas and immerse yourself in a world of endless possibilities.",
+        comments: 4,
+      },
+    ],
+  },
+  {
+    id: 6,
+    blogs: [
+      {
+        id: 6,
+        imageUrl: "../../img/blog6.jpg",
+
+        title: "Mastering the Essence: Lorem Ipsum and Beyond",
+        authorIcon: "material-symbols:man",
+        author: "John Doe",
+        categoryIcon: "icon-park-outline:stapler",
+        category: "Marketing, Design",
+        description:
+        "Experience the captivating journey of self-discovery as you delve into the depths of Quis Autem Velis, a world where reprehenderit and voluptate intertwine to create a mesmerizing tapestry of emotions.",
+        comments: 5,
+      },
+    ],
+  },
+];
+const newsTitle = "News & Announcements";
+const newsSubTitle = `There are many variations of passages of Lorem Ipsum available, but
+  the majority have suffered alteration, by injected humour, or new
+  randomised words which don't look believable.`;
 </script>
 
-<style>
-
+<style scoped>
+.section_box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+.row .fourcol {
+  width: 100%;
+}
+.blog_item_inner {
+    
+    min-height: 343px;
+}
 </style>
