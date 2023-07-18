@@ -28,7 +28,7 @@
               <div class="zoom_photo">
                 <div class="view view-first">
                   <a :href="blog.imageUrl" class="prettyPhoto[gallery1]">
-                    <img :src="blog.imageUrl" :alt="blog.title" />
+                    <img :src="require(`../public/img/${blog.imageUrl}`)" :alt="blog.title" />
                     <span class="mask">
                       <span class="zoom"></span>
                     </span>
