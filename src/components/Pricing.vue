@@ -206,9 +206,9 @@
         <div class="section_box social_margins align_center">
           <!--begin social icons -->
           <ul class="social_icons fade_in">
-            <li v-for="Icon in Icons" :key="Icon.id">
+            <li v-for="icon in icons" :key="icon.id">
               <a href="#">
-                <Icon :icon="Icon.socialIcon" width="30" />
+                <Icon :icon="icon.socialIcon" width="30" />
               </a>
             </li>
             
@@ -223,7 +223,7 @@
 
 <script setup>
 import { Icon } from '@iconify/vue';
-const Icons =[
+const icons =[
   {id:1,socialIcon: "mdi:twitter"},
   {id:2,socialIcon: "mdi:pinterest"},
   {id:3,socialIcon: "ic:baseline-facebook"},
