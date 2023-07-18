@@ -185,8 +185,27 @@ const newsSubTitle = `There are many variations of passages of Lorem Ipsum avail
 <style scoped>
 .section_box {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
+}
+@media (min-width: 1200px) {
+  /* Large screen styles */
+  .section_box {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+  /* Tablet screen styles */
+  .section_box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  /* Mobile screen styles */
+  .section_box {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 .row .fourcol {
   width: 100%;
