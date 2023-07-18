@@ -233,7 +233,7 @@ const Icons =[
   {id:7,socialIcon: "icon-park-outline:dribble"},
   {id:8,socialIcon: "mdi:github"},
   {id:9,socialIcon: "ri:linkedin-fill"},
-  {id:10,socialIcon: "mdi:rss"},
+  {id:10,socialIcon: "mdi:rss"}
 ]
 </script>
 
