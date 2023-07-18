@@ -206,56 +206,12 @@
         <div class="section_box social_margins align_center">
           <!--begin social icons -->
           <ul class="social_icons fade_in">
-            <li>
+            <li v-for="Icon in Icons" :key="Icon.id">
               <a href="#">
-                <Icon icon="mdi:twitter" width="30" />
+                <Icon :icon="Icon.socialIcon" width="30" />
               </a>
             </li>
-            <li>
-              <a href="#">
-                <Icon icon="mdi:pinterest" width="30" />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <Icon icon="ri:facebook-fill" width="30" />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <Icon icon="mdi:instagram" width="30" />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <Icon icon="mdi:youtube" width="30" />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <Icon icon="mdi:skype" width="30" />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <Icon icon="icon-park-outline:dribble" width="30" />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <Icon icon="mdi:github" width="30" />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <Icon icon="ri:linkedin-fill" width="30" />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <Icon icon="mdi:rss" width="30" />
-              </a>
-            </li>
+            
           </ul>
           <!--end social icons -->
         </div>
@@ -267,6 +223,18 @@
 
 <script setup>
 import { Icon } from '@iconify/vue';
+const Icons =[
+  {id:1,socialIcon: "mdi:twitter"},
+  {id:2,socialIcon: "mdi:pinterest"},
+  {id:3,socialIcon: "gg:facebook"},
+  {id:4,socialIcon: "mdi:instagram"},
+  {id:5,socialIcon: "mdi:youtube"},
+  {id:6,socialIcon: "mdi:skype"},
+  {id:7,socialIcon: "icon-park-outline:dribble"},
+  {id:8,socialIcon: "mdi:github"},
+  {id:9,socialIcon: "ri:linkedin-fill"},
+  {id:10,socialIcon: "mdi:rss"},
+]
 </script>
 
 <style>
