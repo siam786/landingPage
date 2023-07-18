@@ -71,7 +71,7 @@ const blogItems = [
     blogs: [
       {
         id: 1,
-        imageUrl: "../../public/img/blog1.jpg",
+        imageUrl: "public/img/blog1.jpg",
         title: "Lorem ipsum sit netsum amet.",
         authorIcon: "material-symbols:man",
         author: "John Doe",
@@ -88,7 +88,7 @@ const blogItems = [
     blogs: [
       {
         id: 2,
-        imageUrl: "../../public/img/blog2.jpg",
+        imageUrl: "public/img/blog2.jpg",
         title: "Unveiling the Secrets of Lorem Ipsum",
         authorIcon: "material-symbols:man",
         author: "John Doe",
@@ -105,7 +105,7 @@ const blogItems = [
     blogs: [
       {
         id: 3,
-        imageUrl: "../../public/img/blog3.jpg",
+        imageUrl: "public/img/blog3.jpg",
         title: "Exploring the Depths of Netsum Amet",
         authorIcon: "material-symbols:man",
         author: "John Doe",
@@ -122,7 +122,7 @@ const blogItems = [
     blogs: [
       {
         id: 4,
-        imageUrl: "../../public/img/blog4.jpg",
+        imageUrl: "public/img/blog4.jpg",
         title: "The Journey of Lorem Ipsum: From Words to Meaning",
         authorIcon: "material-symbols:man",
         author: "John Doe",
@@ -139,7 +139,7 @@ const blogItems = [
     blogs: [
       {
         id: 5,
-        imageUrl: "../../public/img/blog5.jpg",
+        imageUrl: "public/img/blog5.jpg",
         title: "Unlocking the Power of Sit Netsum Amet",
         authorIcon: "material-symbols:man",
         author: "John Doe",
@@ -156,7 +156,7 @@ const blogItems = [
     blogs: [
       {
         id: 6,
-        imageUrl: "../../img/blog6.jpg",
+        imageUrl: "public/img/blog6.jpg",
 
         title: "Mastering the Essence: Lorem Ipsum and Beyond",
         authorIcon: "material-symbols:man",
