@@ -3,7 +3,7 @@
     <div v-for="service in services" :key="service.id" class="services_item">
       <div class="services_box">
         <div class="icon_wrapper">
-          <Icon :icon="service.icon" width="50" />
+          <Icon class="icon" :icon="service.icon" width="50" />
         </div>
         <h2>{{ service.title }}</h2>
         <p>{{ service.description }}</p>
@@ -39,3 +39,11 @@ const services = ref([
 
 
 </script>
+
+<style scoped>
+
+
+.services_item:hover .icon {
+    color: #fff !important;
+}
+</style>
