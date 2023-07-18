@@ -208,7 +208,7 @@
           <ul class="social_icons fade_in">
             <li v-for="icon in icons" :key="icon.id">
               <a href="#">
-                <Icon icon="ic:baseline-facebook" width="30" />
+                <Icon :icon="icon.socialIcon" width="30" />
               </a>
             </li>
             
