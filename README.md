@@ -4,7 +4,7 @@ This simple vue3 Simple landing convert from html,css template using vue3 applic
 
 ## Live Link
 
-- [@Live Link](https://app-landing-page-vu3.netlify.app/)
+- [@Live Link](https://landing-page-vu3.vercel.app/)
 
 ## Screenshots
 
