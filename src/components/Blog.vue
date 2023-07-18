@@ -28,7 +28,7 @@
               <div class="zoom_photo">
                 <div class="view view-first">
                   <a :href="blog.imageUrl" class="prettyPhoto[gallery1]">
-                    <img :src="require(`../public/img/${blog.imageUrl}`)" :alt="blog.title" />
+                    <img :src="blog.imageUrl" :alt="blog.title" />
                     <span class="mask">
                       <span class="zoom"></span>
                     </span>
@@ -64,6 +64,12 @@
 
 <script setup>
 import { Icon } from "@iconify/vue";
+import blog1Image from "../../public/img/blog1.jpg";
+import blog2Image from "../../public/img/blog2.jpg";
+import blog3Image from "../../public/img/blog3.jpg";
+import blog4Image from "../../public/img/blog4.jpg";
+import blog5Image from "../../public/img/blog5.jpg";
+import blog6Image from "../../public/img/blog6.jpg";
 
 const blogItems = [
   {
@@ -71,7 +77,7 @@ const blogItems = [
     blogs: [
       {
         id: 1,
-        imageUrl: "public/img/blog1.jpg",
+        imageUrl: blog1Image,
         title: "Lorem ipsum sit netsum amet.",
         authorIcon: "material-symbols:man",
         author: "John Doe",
@@ -88,7 +94,7 @@ const blogItems = [
     blogs: [
       {
         id: 2,
-        imageUrl: "public/img/blog2.jpg",
+        imageUrl: blog2Image,
         title: "Unveiling the Secrets of Lorem Ipsum",
         authorIcon: "material-symbols:man",
         author: "John Doe",
@@ -105,7 +111,7 @@ const blogItems = [
     blogs: [
       {
         id: 3,
-        imageUrl: "public/img/blog3.jpg",
+        imageUrl: blog3Image,
         title: "Exploring the Depths of Netsum Amet",
         authorIcon: "material-symbols:man",
         author: "John Doe",
@@ -122,7 +128,7 @@ const blogItems = [
     blogs: [
       {
         id: 4,
-        imageUrl: "public/img/blog4.jpg",
+        imageUrl: blog4Image,
         title: "The Journey of Lorem Ipsum: From Words to Meaning",
         authorIcon: "material-symbols:man",
         author: "John Doe",
@@ -139,7 +145,7 @@ const blogItems = [
     blogs: [
       {
         id: 5,
-        imageUrl: "public/img/blog5.jpg",
+        imageUrl: blog5Image,
         title: "Unlocking the Power of Sit Netsum Amet",
         authorIcon: "material-symbols:man",
         author: "John Doe",
@@ -156,7 +162,7 @@ const blogItems = [
     blogs: [
       {
         id: 6,
-        imageUrl: "public/img/blog6.jpg",
+        imageUrl: blog6Image,
 
         title: "Mastering the Essence: Lorem Ipsum and Beyond",
         authorIcon: "material-symbols:man",
