@@ -224,16 +224,16 @@
 <script setup>
 import { Icon } from '@iconify/vue';
 const Icons =[
-  {id:1,socialIcon: "gg:facebook"},
-  {id:2,socialIcon: "mdi:twitter"},
-  {id:3,socialIcon: "mdi:pinterest"},
+  {id:1,socialIcon: "mdi:twitter"},
+  {id:2,socialIcon: "mdi:pinterest"},
+  {id:3,socialIcon: "gg:facebook"},
   {id:4,socialIcon: "mdi:instagram"},
   {id:5,socialIcon: "mdi:youtube"},
   {id:6,socialIcon: "mdi:skype"},
   {id:7,socialIcon: "icon-park-outline:dribble"},
   {id:8,socialIcon: "mdi:github"},
   {id:9,socialIcon: "ri:linkedin-fill"},
-  {id:10,socialIcon: "mdi:rss"}
+  {id:10,socialIcon: "mdi:rss"},
 ]
 </script>
 
